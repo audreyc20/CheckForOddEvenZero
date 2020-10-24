@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    //assign variables
+    int intNum = 0;
+    int numOdds = 0;
+    int numEvens = 0;
+    int numZeros = 0;
+    
+    //user enters number
+    System.out.println("Enter an integer value");
+    Scanner userInput = new Scanner(System.in);
+    String strNum = userInput.nextLine();
+    
+    //loops thorugh the string to check for odds or evens
+    for (int i = 0; i < strNum.length(); i++){
+        char c = strNum.charAt(i); 
+        intNum = Character.getNumericValue(c);
+        //checks for zeros
+        if (intNum == 0) {
+          numZeros = numZeros + 1;
+        }
+        //checks for evens
+        if (intNum % 2 == 0) {
+          numEvens = numEvens + 1;
+        }
+        //checks for odds
+        else {
+          numOdds = numOdds + 1;
+        }
+     }
+        
+    //tells the user how many of each
+    System.out.println("Number of odd digits: " + numOdds);
+    System.out.println("Number of even digits: " + numEvens);
+    System.out.println("Number of zero's: " + numZeros);
+  }
+}
